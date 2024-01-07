@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const App = () => {
   const [length, setLength] = useState(8);
@@ -29,73 +30,81 @@ const App = () => {
     generatePassword();
   }, [length, numberAllowed, charAllowed]);
   return (
-    <div className=" w-full max-w-md mx-auto  shadow-md rounded-md px-4 py-3 my-8  bg-blue-200 ">
-      <h1 className=" flex justify-center text-2xl font-semibold mb-10 text-orange-600">
-        {" "}
-        Password Generator
-      </h1>
-      <div className="flex justify-center shadow rounded-lg overflow-hidden mb-4 ">
-        <input
-          type="text"
-          value={password}
-          placeholder="Password"
-          className=" outline-none w-full py-2 px-3"
-          readOnly
-          ref={passwordRef}
-        />
-        <button onClick={copyPassword} className=" bg-red-200 px-2 font-medium">
-          Copy
-        </button>
+    <>
+      <div className=" w-full max-w-md mx-auto  shadow-md rounded-md px-4 py-3 my-8  bg-blue-200 ">
+        <h1 className=" flex justify-center text-2xl font-semibold mb-10 text-orange-600">
+          {" "}
+          Password Generator
+        </h1>
+        <div className="flex justify-center shadow rounded-lg overflow-hidden mb-4 ">
+          <input
+            type="text"
+            value={password}
+            placeholder="Password"
+            className=" outline-none w-full py-2 px-3"
+            readOnly
+            ref={passwordRef}
+          />
+          <button
+            onClick={copyPassword}
+            className=" bg-red-200 px-2 font-medium"
+          >
+            Copy
+          </button>
+        </div>
+        <div className=" flex">
+          <div className=" flex items-center gap-x-1">
+            <input
+              type="range"
+              min={6}
+              max={50}
+              value={length}
+              className=" cursor-pointer"
+              onChange={(e) => setLength(e.target.value)}
+              name=""
+              id=""
+            />
+            <label htmlFor="length" className=" text-orange-600 font-semibold">
+              {" "}
+              Length: {length}
+            </label>
+          </div>
+          <div className=" flex mx-2 items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={numberAllowed}
+              onChange={() => {
+                setNumberAllowed((prev) => !prev);
+              }}
+              name=""
+              id=""
+            />
+            <label htmlFor="number" className="text-orange-600 font-semibold">
+              {" "}
+              Numbers
+            </label>
+          </div>
+          <div className=" flex mx-2 items-center gap-x-1">
+            <input
+              type="checkbox"
+              defaultChecked={charAllowed}
+              onChange={() => {
+                setCharAllowed((prev) => !prev);
+              }}
+              name=""
+              id=""
+            />
+            <label
+              htmlFor="charInput"
+              className="text-orange-600 font-semibold"
+            >
+              {" "}
+              Character
+            </label>
+          </div>
+        </div>
       </div>
-      <div className=" flex">
-        <div className=" flex items-center gap-x-1">
-          <input
-            type="range"
-            min={6}
-            max={50}
-            value={length}
-            className=" cursor-pointer"
-            onChange={(e) => setLength(e.target.value)}
-            name=""
-            id=""
-          />
-          <label htmlFor="length" className=" text-orange-600 font-semibold">
-            {" "}
-            Length: {length}
-          </label>
-        </div>
-        <div className=" flex mx-2 items-center gap-x-1">
-          <input
-            type="checkbox"
-            defaultChecked={numberAllowed}
-            onChange={() => {
-              setNumberAllowed((prev) => !prev);
-            }}
-            name=""
-            id=""
-          />
-          <label htmlFor="number" className="text-orange-600 font-semibold">
-            {" "}
-            Numbers
-          </label>
-        </div>
-        <div className=" flex mx-2 items-center gap-x-1">
-          <input
-            type="checkbox"
-            defaultChecked={charAllowed}
-            onChange={() => {
-              setCharAllowed((prev) => !prev);
-            }}
-            name=""
-            id=""
-          />
-          <label htmlFor="charInput" className="text-orange-600 font-semibold">
-            {" "}
-            Character
-          </label>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
