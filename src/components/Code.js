@@ -49,7 +49,11 @@ const Code = () => {
           htmlFor="dataInput"
           className=" block mb-2 text-[#4aa6e4] mt-5 font-medium "
         >
-          Data for QR CODE for your {data}
+          Data for QR CODE for your{" "}
+          <a href="/" className=" cursor-pointer">
+            {" "}
+            {data}
+          </a>
         </label>
         <input
           type="text"
