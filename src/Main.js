@@ -3,6 +3,7 @@ import App from "./App";
 import Currency from "./Currency";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Code from "./components/Code";
+import Advice from "./components/Advice";
 
 const Main = () => {
   return (
@@ -21,15 +22,15 @@ const Main = () => {
           ₹ QR Code Scanner
         </Link>
         <Link
-          to={"/currency"}
+          to={"/advice"}
           className=" text-blue-900 font-semibold border hover:underline text-xl mx-3 hover:text-blue-950"
         >
-          ₹ Currency Project
+          Advice
         </Link>
       </div>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/currency" element={<Currency />} />
+        <Route path="/advice" element={<Advice />} />
         <Route path="/code" element={<Code />} />
       </Routes>
     </BrowserRouter>
