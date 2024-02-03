@@ -26,7 +26,7 @@ const Advice = () => {
           Get Advice
         </button>
         <p className=" my-3 text-xl text-gray-700">
-          You get {count} {count == 1 ? "Advice" : "Advices"}
+          You get {count} {count === 1 ? "Advice" : "Advices"}
         </p>
       </div>
     </div>
