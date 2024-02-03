@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdClear } from "react-icons/md";
 import { BODY_MASS_IMAGE } from "../hooks/constant";
 
 const BodyMass = () => {
@@ -6,9 +7,13 @@ const BodyMass = () => {
   const [weight, setWeight] = useState("");
   const [bmi, setBmi] = useState(null);
   const [bmiStatus, setBmiStatus] = useState("");
+  const [error, setError] = useState("");
 
   const calculateBmi = () => {
-    if (hight && weight) {
+    const isValidHight = /^\d+$/.test(hight);
+    const isValidWeight = /^\d+$/.test(weight);
+
+    if (isValidHight && isValidWeight) {
       const hightInMeters = hight / 100;
       const bmiValue = weight / (hightInMeters * hightInMeters);
       setBmi(bmiValue.toFixed(2));
@@ -21,10 +26,18 @@ const BodyMass = () => {
       } else {
         setBmiStatus("Obese");
       }
+      setError("");
     } else {
       setBmi(null);
       setBmiStatus("");
+      setError("Please enter valid numeric values for hight and weight..");
     }
+  };
+  const clear = () => {
+    setHight("");
+    setWeight("");
+    setBmi(null);
+    setError("");
   };
 
   return (
@@ -37,10 +50,7 @@ const BodyMass = () => {
           <h1 className=" text-2xl font-semibold mb-4 shadow-sm w-fit">
             BMI Calculator
           </h1>
-          <p className=" text-red-800 text-sm mb-3">
-            {" "}
-            Please enter valid numeric values for hight and weight..
-          </p>
+          {error && <p className=" text-red-800 text-sm mb-3">{error} </p>}
           <div className=" mb-2 block">
             <label htmlFor="height" className=" block text-sm ">
               Height(cm):
@@ -65,15 +75,23 @@ const BodyMass = () => {
               className="border rounded-sm pl-2 border-blue-500 my-2 py-1"
             />
           </div>
-          <button
-            onClick={calculateBmi}
-            className=" bg-green-500  text-white px-3 py-2 rounded-md hover:bg-green-600 hover:text-gray-200 delay-200"
-          >
-            Calculate BMI
-          </button>
+          <div className=" flex">
+            <button
+              onClick={calculateBmi}
+              className=" bg-green-500  text-white px-3 py-2 rounded-md hover:bg-green-600 hover:text-gray-200 delay-200"
+            >
+              Calculate BMI
+            </button>
+            <button
+              className=" flex bg-red-300 py-2 px-3 mx-2 rounded-md"
+              onClick={clear}
+            >
+              <MdClear className=" pt-[6px] text-xl " />
+            </button>
+          </div>
           {bmi !== null && (
             <div className=" mt-3 border  border-blue-500 p-3 rounded-sm">
-              <p>Your BMI is:{bmi} </p>
+              <p>Your BMI is: {bmi} </p>
               <p>Status: {bmiStatus} </p>
             </div>
           )}
