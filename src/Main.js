@@ -1,10 +1,10 @@
 import React from "react";
 import App from "./App";
-import Currency from "./Currency";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Code from "./components/Code";
 import Advice from "./components/Advice";
 import BodyMass from "./components/BodyMass";
+import Money from "./components/Money";
 
 const Main = () => {
   return (
@@ -34,12 +34,19 @@ const Main = () => {
         >
           Body Mass Index
         </Link>
+        <Link
+          to={"/money"}
+          className=" text-blue-900 font-semibold border hover:underline text-xl mx-3 hover:text-blue-950"
+        >
+          Money
+        </Link>
       </div>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/advice" element={<Advice />} />
         <Route path="/code" element={<Code />} />
         <Route path="/bmi" element={<BodyMass />} />
+        <Route path="/money" element={<Money />} />
       </Routes>
     </BrowserRouter>
   );

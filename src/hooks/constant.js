@@ -3,3 +3,6 @@ export const QRCODE_IMAGE =
 
 export const BODY_MASS_IMAGE =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgBYWmO5lkHyThiF5uV5yFcDKGpaIKmmN4vA&usqp=CAU";
+
+export const MONEY_BANNER =
+  "https://images.pexels.com/photos/259165/pexels-photo-259165.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
