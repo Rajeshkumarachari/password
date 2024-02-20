@@ -6,11 +6,12 @@ import Advice from "./components/Advice";
 import BodyMass from "./components/BodyMass";
 import Money from "./components/Money";
 import Watch from "./components/Watch";
+import StrongPassword from "./components/StrongPassword";
 
 const Main = () => {
   return (
     <BrowserRouter>
-      <div className=" flex justify-center bg-slate-200  flex-wrap">
+      <div className=" flex justify-center bg-slate-200  flex-wrap ">
         <Link
           to={"/"}
           className=" text-blue-900 font-semibold border hover:underline text-xl mx-3  hover:text-blue-950"
@@ -47,6 +48,12 @@ const Main = () => {
         >
           Time
         </Link>
+        <Link
+          to={"/password"}
+          className=" text-blue-900 font-semibold border hover:underline text-xl mx-3 hover:text-blue-950"
+        >
+          Strong Password
+        </Link>
       </div>
       <Routes>
         <Route path="/" element={<App />} />
@@ -55,6 +62,7 @@ const Main = () => {
         <Route path="/bmi" element={<BodyMass />} />
         <Route path="/money" element={<Money />} />
         <Route path="/time" element={<Watch />} />
+        <Route path="/password" element={<StrongPassword />} />
       </Routes>
     </BrowserRouter>
   );
