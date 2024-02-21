@@ -7,6 +7,7 @@ import BodyMass from "./components/BodyMass";
 import Money from "./components/Money";
 import Watch from "./components/Watch";
 import StrongPassword from "./components/StrongPassword";
+import NewApp from "./components/questions/NewApp";
 
 const Main = () => {
   return (
@@ -54,6 +55,12 @@ const Main = () => {
         >
           Strong Password
         </Link>
+        <Link
+          to={"/faqs"}
+          className=" text-blue-900 font-semibold border hover:underline text-xl mx-3 hover:text-blue-950"
+        >
+          Accordion for React
+        </Link>
       </div>
       <Routes>
         <Route path="/" element={<App />} />
@@ -63,6 +70,7 @@ const Main = () => {
         <Route path="/money" element={<Money />} />
         <Route path="/time" element={<Watch />} />
         <Route path="/password" element={<StrongPassword />} />
+        <Route path="/faqs" element={<NewApp />} />
       </Routes>
     </BrowserRouter>
   );
