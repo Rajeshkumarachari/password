@@ -1,5 +1,5 @@
 import React from "react";
-import faq from "./faq.css";
+import style from "./style.css";
 import Accordion from "./Accordion";
 
 const NewApp = () => {

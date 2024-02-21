@@ -2,6 +2,12 @@
   max-width: 800px;
   margin: 0 auto;
 }
+.title {
+  font-size: 20px;
+  margin: 6px;
+  color: aqua;
+  cursor: pointer;
+}
 
 .FaqItem {
   margin-bottom: 14px;
@@ -9,7 +15,7 @@
   border-radius: 6px;
   overflow: hidden;
 }
-.FaqItem:active body {
+.FaqItem.active .body {
   max-height: 300px;
 }
 

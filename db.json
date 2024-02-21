@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "question": "What are the features of React? ",
+      "ans": "It uses the virtual DOM instead of the real DOM, server-side rendering, uni-directional data flow or data binding."
+    },
+    {
+      "id": "2",
+      "question": "What is JSX?",
+      "ans": "JSX is a shorthand for JavaScript XML. This is a type of file used by React which utilizes the expressiveness of JavaScript along with HTML like template syntax. This makes the HTML file really easy to understand. This file makes applications robust and boosts its performance."
+    },
+    {
+      "id": "3",
+      "question": "What is Props?",
+      "ans": "2Props is the shorthand for Properties in React. They are read-only components which must be kept pure i.e. immutable. They are always passed down from the parent to the child components throughout the application. A child component can never send a prop back to the parent component. This help in maintaining the unidirectional data flow and are generally used to render the dynamically generated data.00"
+    }
+  ]
+}
