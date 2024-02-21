@@ -3,7 +3,7 @@ import FaqItem from "./FaqItem";
 
 const Accordion = () => {
   return (
-    <div>
+    <div className="faqAccordion">
       <h2>FAQ's</h2>
       <FaqItem />
       <FaqItem />

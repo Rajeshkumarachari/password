@@ -1,0 +1,36 @@
+.faqAccordion {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.FaqItem {
+  margin-bottom: 14px;
+  border: 1px solid #e0e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.FaqItem:active body {
+  max-height: 300px;
+}
+
+.header {
+  background-color: #f7f7f7;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.header:hover {
+  background-color: #e0e0e0;
+}
+.body {
+  background-color: #fff;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.content {
+  padding: 10px;
+  color: #555;
+}
