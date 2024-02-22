@@ -3,10 +3,15 @@
   margin: 0 auto;
 }
 .title {
-  font-size: 20px;
+  font-size: 29px;
+
   margin: 6px;
-  color: aqua;
+  color: rgb(60, 79, 248);
   cursor: pointer;
+  font-weight: 500;
+}
+.title:hover {
+  color: rgb(4, 28, 248);
 }
 
 .FaqItem {
